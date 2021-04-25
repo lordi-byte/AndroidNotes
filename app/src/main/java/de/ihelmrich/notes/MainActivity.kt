@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
             tvFirst.text = (tvFirst.text.toString().toInt() * 2).toString()
             Snackbar.make(view,"the value of the text changed.", Snackbar.LENGTH_LONG).show()
         }
+        createPerson()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -35,5 +36,17 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun createPerson() {
+        // Try properties with kotlin
+        val p = Person("Ian", 150.0)
+        val name = p.name
+
+        p.weightLbs = 150.0
+        // uses the getter method in the person class
+        val kilos = p.weightKg
+        // uses the setter method in the person class
+        p.weightKg = 80.0
     }
 }
