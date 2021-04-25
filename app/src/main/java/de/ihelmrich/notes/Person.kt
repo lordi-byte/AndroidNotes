@@ -1,9 +1,16 @@
 package de.ihelmrich.notes
 
-class Person constructor(val name: String, var weightLbs: Double) {
+class Person(val name: String, var weightLbs: Double) {
     var weightKg: Double
         get() = weightLbs / 2.2
         set(value) {
             weightLbs = value * 2.2
         }
+
+    fun eatLasagne(addedIceCream: Boolean = true) {
+        weightKg += if (addedIceCream) 3.0 else 0.0
+    }
+    fun calcGoalWeightKg(kgToLose: Double = 2.0): Double {
+        return weightKg - kgToLose
+    }
 }
