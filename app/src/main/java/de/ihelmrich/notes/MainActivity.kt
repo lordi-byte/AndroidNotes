@@ -41,6 +41,8 @@ class MainActivity : AppCompatActivity() {
     private fun createPerson() {
         // Try properties with kotlin
         val p = Person("Ian", 150.0)
+        // the compiler still knows which parameter should be used in the constructor
+        val personTwo = Person(weightLbs = 120.0, name = "Ian")
         val name = p.name
 
         p.weightLbs = 150.0
@@ -48,5 +50,7 @@ class MainActivity : AppCompatActivity() {
         val kilos = p.weightKg
         // uses the setter method in the person class
         p.weightKg = 80.0
+        p.eatLasagne(true)
+        p.calcGoalWeightKg(5.0)
     }
 }

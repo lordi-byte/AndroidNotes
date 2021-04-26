@@ -7,8 +7,8 @@ class Person(val name: String, var weightLbs: Double) {
             weightLbs = value * 2.2
         }
 
-    fun eatLasagne(addedIceCream: Boolean = true) {
-        weightKg += if (addedIceCream) 3.0 else 0.0
+    fun eatLasagne(addedLasagne: Boolean = true) {
+        weightKg += if (addedLasagne) 3.0 else 0.0
     }
     fun calcGoalWeightKg(kgToLose: Double = 2.0): Double {
         return weightKg - kgToLose
